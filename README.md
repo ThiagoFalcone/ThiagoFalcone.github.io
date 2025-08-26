@@ -30,7 +30,7 @@ Neste portfólio, apresento minhas habilidades iniciais em **front-end**, demons
 
 ## 🌍 Publicação
 O portfólio está disponível publicamente em:  
-👉 [thiagofalcone.github.io](https://thiagofalcone.github.io/ThiagoFalcone.github.io2)  
+👉 [thiagofalcone.github.io](https://thiagofalcone.github.io)  
 
 ---
 

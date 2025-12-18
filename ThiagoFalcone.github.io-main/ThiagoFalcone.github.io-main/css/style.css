@@ -1,0 +1,696 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  transition: all 0.3s ease;
+}
+
+body {
+  background: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Linhas de grade sutil no fundo */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(90deg, #f5f5f5 1px, transparent 1px),
+    linear-gradient(#f5f5f5 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Cabeçalho com imagem de fundo - TEMA CLARO (IMAGEM MAIS VISÍVEL) */
+header {
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+    url("../design\ assets/another.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #1a1a1a;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.header-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #1a1a1a;
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9); /* Contraste aprimorado */
+}
+
+header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #1a1a1a;
+}
+
+header p {
+  font-size: 1.25rem;
+  color: #222; /* Cor mais escura para melhor contraste */
+  line-height: 1.8;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+  padding: 0 1rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8); /* Contraste aprimorado */
+}
+
+/* Seções */
+section {
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+}
+
+h2 {
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #1a1a1a;
+}
+
+/* Cards */
+.card {
+  background: #ffffff;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  border-color: #e0e0e0;
+}
+
+.card p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: #444;
+  font-size: 1.05rem;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Lista de skills */
+.skills ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.skills li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  padding: 1rem;
+  background: #fafafa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  color: #333;
+}
+
+.skills li:hover {
+  background: #f5f5f5;
+  transform: translateY(-2px);
+  border-color: #ddd;
+}
+
+.skill-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.75rem;
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+/* Ícones específicos - cores suaves */
+.github-white {
+  filter: brightness(0);
+}
+
+.sql-icon {
+  color: #00758f;
+}
+
+.metrology-icon {
+  color: #0088cc;
+}
+
+.deploy-icon {
+  color: #ff6b00;
+}
+
+.python-icon {
+  color: #3776ab;
+}
+
+.vscode-icon {
+  color: #007acc;
+}
+
+/* Languages Section */
+.languages-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.language-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #fafafa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  flex: 1;
+  min-width: 200px;
+}
+
+.language-item:hover {
+  background: #f5f5f5;
+  transform: translateY(-2px);
+}
+
+.flag-icon {
+  width: 36px;
+  height: 24px;
+  margin-right: 1rem;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid #eee;
+}
+
+.language-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.language-name {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.language-level {
+  color: #666;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+/* Contato */
+.contact-icon { 
+  font-size: 1.1rem; 
+  margin-right: 0.75rem; 
+  width: 20px; 
+  text-align: center; 
+  color: #666;
+}
+
+.email-icon { color: #d44638; }
+.linkedin-icon { color: #0077b5; }
+.github-icon { color: #333; }
+
+.card a {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.card a:hover {
+  color: #666;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Rodapé */
+footer {
+  background: #fafafa;
+  color: #666;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  margin-top: 4rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Estilos para o cartão de perfil */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.profile-card {
+  flex: 0 0 220px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Cartão de perfil */
+.profile-mini {
+  width: 220px;
+  height: 300px;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.profile-mini .profileImage {
+  background-image: url("../design assets/eu.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 3px solid #f0f0f0;
+  margin-bottom: 1.5rem;
+  background-color: #fafafa;
+}
+
+.profile-mini .textContainer {
+  width: 100%;
+  text-align: center;
+  padding: 0 1rem 1rem;
+}
+
+.profile-mini .name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.profile-mini .title {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 400;
+}
+
+/* Botões de Controle - Minimalistas */
+.theme-toggle {
+  position: fixed;
+  top: 25px;
+  right: 80px;
+  z-index: 1000;
+}
+
+.language-toggle {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 1000;
+}
+
+.theme-toggle button,
+.language-toggle button {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  color: #666;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.theme-toggle button:hover,
+.language-toggle button:hover {
+  background: #f5f5f5;
+  color: #333;
+  border-color: #bbb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.language-toggle button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.lang-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.lang-text {
+  font-size: 0.65rem;
+  font-weight: 500;
+  margin-top: 1px;
+  color: #666;
+}
+
+/* Tema Escuro */
+body.dark-theme {
+  background: #1a1a1a;
+  color: #f0f0f0;
+}
+
+body.dark-theme::before {
+  background-image: 
+    linear-gradient(90deg, #2a2a2a 1px, transparent 1px),
+    linear-gradient(#2a2a2a 1px, transparent 1px);
+  opacity: 0.2;
+}
+
+/* HEADER NO TEMA ESCURO - COM IMAGEM VISÍVEL */
+body.dark-theme header {
+  background: 
+    linear-gradient(rgba(20, 20, 20, 0.6), rgba(20, 20, 20, 0.6)),
+    url("../design assets/another.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  border-bottom: 1px solid #333;
+}
+
+body.dark-theme header h1 {
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-theme header h1::after {
+  background: #ffffff;
+}
+
+body.dark-theme header p {
+  color: #e0e0e0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Restante do tema escuro */
+body.dark-theme h2 {
+  color: #ffffff;
+}
+
+body.dark-theme h2::after {
+  background: #ffffff;
+}
+
+body.dark-theme .card {
+  background: #2a2a2a;
+  border: 1px solid #333;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .card p {
+  color: #e0e0e0;
+}
+
+body.dark-theme .skills li {
+  background: #2a2a2a;
+  border: 1px solid #333;
+  color: #e0e0e0;
+}
+
+body.dark-theme .skills li:hover {
+  background: #333;
+  border-color: #444;
+}
+
+body.dark-theme .language-item {
+  background: #2a2a2a;
+  border: 1px solid #333;
+}
+
+body.dark-theme .language-item:hover {
+  background: #333;
+}
+
+body.dark-theme .language-name {
+  color: #ffffff;
+}
+
+body.dark-theme .language-level {
+  color: #bbb;
+}
+
+body.dark-theme footer {
+  background: #222222;
+  color: #ddd;
+  border-top: 1px solid #333;
+}
+
+body.dark-theme .card a {
+  color: #ffffff;
+}
+
+body.dark-theme .card a:hover {
+  color: #ddd;
+  border-bottom: 1px solid #666;
+}
+
+body.dark-theme .github-white {
+  filter: brightness(0) invert(1);
+}
+
+body.dark-theme .theme-toggle button,
+body.dark-theme .language-toggle button {
+  background: #333333;
+  border: 1px solid #555;
+  color: #ddd;
+}
+
+body.dark-theme .theme-toggle button:hover,
+body.dark-theme .language-toggle button:hover {
+  background: #444;
+  color: #ffffff;
+  border-color: #666;
+}
+
+/* Melhorias para o tema escuro - ícones */
+body.dark-theme .skill-icon:not(img) {
+  color: #bbb;
+}
+
+body.dark-theme .contact-icon {
+  color: #bbb;
+}
+
+body.dark-theme .email-icon {
+  color: #ff6b6b;
+}
+
+body.dark-theme .linkedin-icon {
+  color: #0a84ff;
+}
+
+body.dark-theme .github-icon {
+  color: #ddd;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header { 
+    padding: 5rem 1.5rem 3rem;
+  }
+  
+  header h1 { 
+    font-size: 2.2rem; 
+  }
+  
+  header p { 
+    font-size: 1.1rem; 
+  }
+  
+  section {
+    padding: 0 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  .skills ul { 
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  }
+  
+  .card {
+    padding: 2rem;
+  }
+  
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .profile-card {
+    flex: 0 0 auto;
+  }
+  
+  .languages-container {
+    flex-direction: column;
+  }
+  
+  .language-item {
+    min-width: auto;
+  }
+  
+  .theme-toggle {
+    top: 20px;
+    right: 70px;
+  }
+  
+  .language-toggle {
+    top: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  header { 
+    padding: 4rem 1rem 2.5rem; 
+  }
+  
+  header h1 { 
+    font-size: 1.8rem; 
+  }
+  
+  header p { 
+    font-size: 1rem; 
+    padding: 0;
+  }
+  
+  h2 { 
+    font-size: 1.5rem; 
+    margin-bottom: 1.5rem;
+  }
+  
+  .skills ul { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .card { 
+    padding: 1.5rem; 
+  }
+  
+  .profile-mini {
+    width: 200px;
+    height: 280px;
+  }
+  
+  .profile-mini .profileImage {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .theme-toggle {
+    top: 15px;
+    right: 60px;
+  }
+  
+  .language-toggle {
+    top: 15px;
+    right: 15px;
+  }
+  
+  .theme-toggle button,
+  .language-toggle button {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animações suaves */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section, .card, .profile-mini {
+  animation: fadeIn 0.6s ease-out forwards;
+}

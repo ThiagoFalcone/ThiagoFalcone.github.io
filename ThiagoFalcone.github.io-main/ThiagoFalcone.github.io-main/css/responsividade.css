@@ -1,0 +1,359 @@
+/* responsividade.css - Responsive Design for All Devices */
+
+/* Dispositivos muito pequenos (smartphones menores) */
+@media (max-width: 360px) {
+  header {
+    padding: 1.5rem 0.8rem !important;
+  }
+  
+  header h1 {
+    font-size: 1.6rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  header p {
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  section {
+    padding: 0 1rem !important;
+    margin: 1.5rem auto !important;
+  }
+  
+  .card {
+    padding: 1.2rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .skills ul {
+    grid-template-columns: 1fr !important;
+    gap: 0.8rem !important;
+  }
+  
+  .skills li {
+    padding: 0.7rem !important;
+    font-size: 1rem !important;
+  }
+  
+  .skill-icon {
+    width: 26px !important;
+    height: 26px !important;
+    margin-right: 0.6rem !important;
+  }
+  
+  .profile-mini {
+    width: 150px !important;
+    height: 210px !important;
+  }
+  
+  .profile-mini .profileImage {
+    width: 110px !important;
+    height: 110px !important;
+  }
+  
+  h2 {
+    font-size: 1.4rem !important;
+    padding-left: 0.6rem !important;
+  }
+  
+  .skills-category h3 {
+    font-size: 1.2rem !important;
+  }
+}
+
+/* Smartphones (360px - 767px) */
+@media (min-width: 361px) and (max-width: 767px) {
+  header {
+    padding: 2rem 1rem !important;
+  }
+  
+  header h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  header p {
+    font-size: 1.05rem !important;
+  }
+  
+  section {
+    padding: 0 1.2rem !important;
+    margin: 2rem auto !important;
+  }
+  
+  .about-container {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .profile-card {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .skills ul {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+  
+  .languages-container {
+    flex-direction: column !important;
+    gap: 1.2rem !important;
+  }
+  
+  .language-item {
+    min-width: auto !important;
+  }
+  
+  .skills-category {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  header {
+    padding: 3rem 1.5rem !important;
+  }
+  
+  header h1 {
+    font-size: 2.2rem !important;
+  }
+  
+  header p {
+    font-size: 1.2rem !important;
+  }
+  
+  section {
+    max-width: 95% !important;
+    padding: 0 1.5rem !important;
+  }
+  
+  .skills ul {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  .about-container {
+    gap: 1.5rem !important;
+  }
+  
+  .profile-mini {
+    width: 180px !important;
+    height: 240px !important;
+  }
+  
+  .profile-mini .profileImage {
+    width: 140px !important;
+    height: 140px !important;
+  }
+  
+  /* Ajuste para telas de tablet em modo retrato */
+  @media (orientation: portrait) {
+    .skills ul {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .about-container {
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+  }
+}
+
+/* Desktops pequenos (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  section {
+    max-width: 90% !important;
+  }
+  
+  .skills ul {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* Desktops médios e grandes (1280px+) */
+@media (min-width: 1280px) {
+  section {
+    max-width: 1100px !important;
+  }
+  
+  .skills ul {
+    grid-template-columns: repeat(5, 1fr) !important;
+  }
+}
+
+/* Ajustes específicos para iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  .card {
+    -webkit-backdrop-filter: blur(5px) !important;
+    backdrop-filter: blur(5px) !important;
+  }
+  
+  header {
+    -webkit-background-size: cover !important;
+    background-size: cover !important;
+  }
+}
+
+/* Ajustes para orientação paisagem em dispositivos móveis */
+@media (max-height: 500px) and (orientation: landscape) {
+  header {
+    padding: 1.5rem !important;
+  }
+  
+  .profile-card {
+    display: none !important;
+  }
+  
+  .about-text {
+    width: 100% !important;
+  }
+  
+  .skills ul {
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-height: 200px !important;
+    overflow-y: auto !important;
+  }
+}
+
+/* Ajustes para telas de alta densidade (Retina) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .skill-icon,
+  .flag-icon {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Impressão */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+    break-inside: avoid !important;
+  }
+  
+  header {
+    background: none !important;
+    color: black !important;
+  }
+  
+  .header-overlay {
+    display: none !important;
+  }
+  
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+  
+  footer {
+    display: none !important;
+  }
+}
+
+/* Acessibilidade: modo alto contraste */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid #00ff80 !important;
+  }
+  
+  .skills li {
+    border-left: 3px solid #00ff80 !important;
+  }
+  
+  a:hover {
+    text-decoration: underline !important;
+  }
+}
+
+/* Acessibilidade: reduzir movimento */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+  
+  .card:hover {
+    transform: none !important;
+  }
+  
+  .skills li:hover {
+    transform: none !important;
+  }
+}
+
+/* Ajustes para telas muito largas (ultrawide) */
+@media (min-width: 1600px) {
+  section {
+    max-width: 1400px !important;
+  }
+  
+  .about-container {
+    justify-content: flex-start !important;
+  }
+  
+  .profile-card {
+    flex: 0 0 250px !important;
+  }
+  
+  .profile-mini {
+    width: 220px !important;
+    height: 280px !important;
+  }
+  
+  .profile-mini .profileImage {
+    width: 180px !important;
+    height: 180px !important;
+  }
+}
+/* Responsividade para a tabela de skills */
+@media (max-width: 768px) {
+  .skills-table-container {
+    margin: 0 -1rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-table .category-header th {
+    font-size: 1.1rem;
+    padding: 0.8rem 0.6rem;
+  }
+  
+  .skills-table .category-header th i {
+    font-size: 0.9rem;
+    margin-right: 8px;
+  }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 360px) {
+  .skills-table td {
+    padding: 0.6rem;
+    min-height: 60px;
+  }
+  
+  .skills-table td .skill-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .skills-table td span {
+    font-size: 0.95rem;
+  }
+}
+
+/* Para tablets em modo paisagem */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .skills-table td {
+    padding: 0.9rem;
+  }
+  
+  .skills-table td span {
+    font-size: 1rem;
+  }
+}
